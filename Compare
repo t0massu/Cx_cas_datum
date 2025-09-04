@@ -1,0 +1,59 @@
+🔑 Metadata
+
+crc:
+
+verze: crc=98a82777eb585e2786888b3b5f8212ba
+
+verze: crc=feb375ab19ee50588c3990455483f04e
+
+📝 TextElement
+
+contentId:
+
+verze: 00000004
+
+verze: 00000002
+
+📦 Obsah (Content)
+
+První XML obsahovalo:
+
+staticContent s id 00000000, 00000001, 00000007
+
+triggerContent s id 00000002
+
+nonQueriedContent (aktuální čas)
+
+transformContent (id 00000004–00000009)
+
+generování datumu (DATUM)
+
+generování času (Cas)
+
+concatenator (spojování textů)
+
+offsetTime (úprava času)
+
+Druhé XML obsahuje pouze:
+
+staticContent id="00000000" → false
+
+staticContent id="00000001" → true
+
+staticContent id="00000002" → pevný text 04/09/2025 10:34
+
+⚙️ Funkčnost
+
+První XML dynamicky generovalo obsah (datum a čas) pomocí transformací a zdroje current time.
+
+Druhé XML má jen statický text (datum a čas jsou natvrdo uložené).
+
+📌 Shrnutí rozdílů:
+
+crc hodnota je jiná.
+
+contentId textu je jiné.
+
+Dynamické transformace (transformContent, nonQueriedContent, triggerContent) byly odstraněny.
+
+Druhé XML má jen pevný statický obsah s datumem a časem.
