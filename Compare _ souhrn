@@ -1,4 +1,4 @@
-Pokud chceš původní XML (s dynamickým časem a datem) **nahradit** novou variantou (s pevně daným textem), tak stačí změnit **tyto položky**:
+Pokud chceme původní XML (s dynamickým časem a datem) **nahradit** novou variantou (s pevně daným textem), tak stačí změnit **tyto položky**:
 
 1. **Hodnota `crc` v `<metadata>`**
 
