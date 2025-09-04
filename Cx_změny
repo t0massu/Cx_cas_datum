@@ -1,0 +1,33 @@
+--- Dynamické XML
++++ Statické XML
+
+- <value>crc=98a82777eb585e2786888b3b5f8212ba</value>
++ <value>crc=feb375ab19ee50588c3990455483f04e</value>
+
+- <contentId>00000004</contentId>
++ <contentId>00000002</contentId>
+
+- <triggerContent id="00000002">
+-   <updateIdentifier>label</updateIdentifier>
+- </triggerContent>
+-
+- <nonQueriedContent id="00000003">
+-   <dataSource name="current time">
+-     <dataFormat>
+-       <dateTime>1970-01-01T00:02:53</dateTime>
+-     </dataFormat>
+-   </dataSource>
+- </nonQueriedContent>
+-
+- <transformContent id="00000006" humanReadableId="DATUM"> ... </transformContent>
+- <staticContent id="00000007"> ... </staticContent>
+- <transformContent id="00000009" humanReadableId="Cas"> ... </transformContent>
+- <transformContent id="00000004"> ... </transformContent>
+- <transformContent id="00000005"> ... </transformContent>
+- <transformContent id="00000008"> ... </transformContent>
+
++ <staticContent id="00000002">
++   <value>
++     <string>04/09/2025 10:34</string>
++   </value>
++ </staticContent>
