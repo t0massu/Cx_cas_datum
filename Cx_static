@@ -1,1 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<label xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       schemaVersion="2.10"
+       xmlns="http://www.domino-printing.com/domino/common/CILF"
+       labelVersion="1"
+       xsi:schemaLocation="http://www.domino-printing.com/domino/common/CILF ..\Schema\CILFSchema.xsd"
+       name="TEST">
+
+  <metadata>
+    <browserImage></browserImage>
+    <imageFormat>eBMP</imageFormat>
+    <customData id="QuickStep">
+      <parameter>
+        <key>crc</key>
+        <value>crc=feb375ab19ee50588c3990455483f04e</value>
+      </parameter>
+      <parameter>
+        <key>PrintGroupName</key>
+        <value>Group 1</value>
+      </parameter>
+      <parameter>
+        <key>ChannelName</key>
+        <value>Channel 1</value>
+      </parameter>
+    </customData>
+  </metadata>
+
+  <layout>
+    <channel>
+      <regionId>region Channel 1</regionId>
+      <segment id="segment_01">
+        <offset>0</offset>
+        <encoderScalingFactor>1</encoderScalingFactor>
+        <invert>false</invert>
+        <reverse>false</reverse>
+        <verticalOrigin>top</verticalOrigin>
+        <compositeElement>
+          <z-order>1</z-order>
+          <xPosition>0</xPosition>
+          <yPosition>0</yPosition>
+          <width>200</width>
+          <height>65</height>
+          <rotation>0</rotation>
+          <invert>false</invert>
+          <reverse>false</reverse>
+          <transparent>true</transparent>
+          <background>0x00000000</background>
+          <textElement>
+            <name>Text 1</name>
+            <z-order>2</z-order>
+            <xPosition>5.5</xPosition>
+            <yPosition>10.5</yPosition>
+            <width>22.8899993896484</width>
+            <height>3.85</height>
+            <rotation>0</rotation>
+            <invert>false</invert>
+            <reverse>false</reverse>
+            <transparent>true</transparent>
+            <background>0x00000000</background>
+            <visible>00000001</visible>
+            <bold>0</bold>
+            <typeface>Noto Sans</typeface>
+            <underline>false</underline>
+            <italic>false</italic>
+            <strikeout>false</strikeout>
+            <characterAspect>1</characterAspect>
+            <characterHeight>2.82222</characterHeight>
+            <lineSpacing>1.362</lineSpacing>
+            <characterRotation>0</characterRotation>
+            <interCharacterGap>0</interCharacterGap>
+            <textAlignment>left</textAlignment>
+            <xJustification>left</xJustification>
+            <yJustification>middle</yJustification>
+            <elementRotation>0</elementRotation>
+            <contentId>00000002</contentId>
+            <foregroundColour>0xFFFFFFFF</foregroundColour>
+          </textElement>
+        </compositeElement>
+      </segment>
+      <invert>false</invert>
+      <reverse>false</reverse>
+      <encoderMode>external</encoderMode>
+      <productDetectMode>external</productDetectMode>
+      <customData id="GxProperties">
+        <parameter>
+          <key>UseDefaultLabelWidth</key>
+          <value>true</value>
+        </parameter>
+      </customData>
+    </channel>
+
+    <region id="region Channel 1">
+      <technologyType>Bitmap</technologyType>
+      <height>65</height>
+    </region>
+
+    <bold>0</bold>
+    <interCharacterGap>0</interCharacterGap>
+    <minFieldWidth>1</minFieldWidth>
+    <maxFieldWidth>200</maxFieldWidth>
+    <minFieldHeight>1</minFieldHeight>
+    <maxFieldHeight>65</maxFieldHeight>
+    <rotation>0</rotation>
+    <invert>false</invert>
+    <reverse>false</reverse>
+    <xJustification>left</xJustification>
+    <yJustification>top</yJustification>
+  </layout>
+
+  <staticContent id="00000000">
+    <value>
+      <bool>false</bool>
+    </value>
+  </staticContent>
+
+  <staticContent id="00000001">
+    <value>
+      <bool>true</bool>
+    </value>
+  </staticContent>
+
+  <staticContent id="00000002">
+    <value>
+      <string>04/09/2025 10:34</string>
+    </value>
+  </staticContent>
+
+</label>
 
