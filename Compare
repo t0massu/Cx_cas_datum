@@ -1,21 +1,18 @@
-🔑 Metadata
-
+Metadata
 crc:
 
 verze: crc=98a82777eb585e2786888b3b5f8212ba
 
 verze: crc=feb375ab19ee50588c3990455483f04e
 
-📝 TextElement
-
+TextElement
 contentId:
 
 verze: 00000004
 
 verze: 00000002
 
-📦 Obsah (Content)
-
+Obsah (Content)
 První XML obsahovalo:
 
 staticContent s id 00000000, 00000001, 00000007
@@ -42,13 +39,12 @@ staticContent id="00000001" → true
 
 staticContent id="00000002" → pevný text 04/09/2025 10:34
 
-⚙️ Funkčnost
-
+Funkčnost
 První XML dynamicky generovalo obsah (datum a čas) pomocí transformací a zdroje current time.
 
 Druhé XML má jen statický text (datum a čas jsou natvrdo uložené).
 
-📌 Shrnutí rozdílů:
+Shrnutí rozdílů:
 
 crc hodnota je jiná.
 
