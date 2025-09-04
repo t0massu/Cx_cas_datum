@@ -1,1 +1,65 @@
+Pokud chceš původní XML (s dynamickým časem a datem) **nahradit** novou variantou (s pevně daným textem), tak stačí změnit **tyto položky**:
 
+1. **Hodnota `crc` v `<metadata>`**
+
+   * musí odpovídat obsahu XML (některé systémy ji validují).
+   * tedy nahradit:
+
+     ```xml
+     <value>crc=98a82777eb585e2786888b3b5f8212ba</value>
+     ```
+
+     ➝
+
+     ```xml
+     <value>crc=feb375ab19ee50588c3990455483f04e</value>
+     ```
+
+2. **`contentId` ve `<textElement>`**
+
+   * ukazuje, odkud se má načíst text.
+   * původně směřovalo na `00000004` (generovaný transformacemi).
+   * musíš přepsat na `00000002`, protože ten odkazuje na nové `staticContent`.
+   * tedy změnit:
+
+     ```xml
+     <contentId>00000004</contentId>
+     ```
+
+     ➝
+
+     ```xml
+     <contentId>00000002</contentId>
+     ```
+
+3. **Obsah `staticContent id="00000002"`**
+
+   * přidat novou sekci se statickým textem:
+
+     ```xml
+     <staticContent id="00000002">
+       <value>
+         <string>04/09/2025 10:34</string>
+       </value>
+     </staticContent>
+     ```
+
+4. **Odebrat nepotřebné sekce**
+
+   * `triggerContent id="00000002"`
+   * `nonQueriedContent id="00000003"`
+   * všechny `transformContent` (`00000004–00000009`)
+   * volitelné `staticContent id="00000007"`
+
+---
+
+✅ **Zjednodušeně řečeno:**
+
+* změna `crc`
+* změna `contentId`
+* přidání/úprava `staticContent id="00000002"`
+* odstranění nepotřebných dynamických částí
+
+---
+
+Pokud ale tvůj systém **nekontroluje CRC**, mohl bys dokonce jen přepsat `contentId` a přidat `staticContent` (ostatní sekce by ignoroval).
