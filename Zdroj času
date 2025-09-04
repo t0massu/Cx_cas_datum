@@ -1,0 +1,112 @@
+<!-- Zdroj času -->
+<nonQueriedContent id="00000003">
+  <dataSource name="current time">
+    <dataFormat>
+      <dateTime>1970-01-01T00:02:53</dateTime>
+    </dataFormat>
+  </dataSource>
+</nonQueriedContent>
+
+<!-- Úprava času (offset, zaokrouhlení) pro datum -->
+<transformContent id="00000005">
+  <transformFunction>OffsetTime</transformFunction>
+  <parameter>
+    <parameterName>RoundSpecifier</parameterName>
+    <value><string>-1:-1:-1:-1</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>RoundBehaviour</parameterName>
+    <value><string>floor</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>RolloverDay</parameterName>
+    <value><integer>-1</integer></value>
+  </parameter>
+  <input>00000003</input>
+</transformContent>
+
+<!-- Formátování datumu -->
+<transformContent id="00000006" humanReadableId="DATUM">
+  <transformFunction>FormatTime</transformFunction>
+  <parameter>
+    <parameterName>Name</parameterName>
+    <value><string>DATUM</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>FormatString</parameterName>
+    <value><string>%CLK_DD%/%CLK_MM%/%CLK_YYYY%</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>PaddingCharacter</parameterName>
+    <value><string>0</string></value>
+  </parameter>
+  <input>00000005</input>
+</transformContent>
+
+<!-- Úprava času (offset, zaokrouhlení) pro čas -->
+<transformContent id="00000008">
+  <transformFunction>OffsetTime</transformFunction>
+  <parameter>
+    <parameterName>RoundSpecifier</parameterName>
+    <value><string>-1:-1:-1:-1</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>RoundBehaviour</parameterName>
+    <value><string>floor</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>RolloverDay</parameterName>
+    <value><integer>-1</integer></value>
+  </parameter>
+  <input>00000003</input>
+</transformContent>
+
+<!-- Formátování času -->
+<transformContent id="00000009" humanReadableId="Cas">
+  <transformFunction>FormatTime</transformFunction>
+  <parameter>
+    <parameterName>Name</parameterName>
+    <value><string>Cas</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>FormatString</parameterName>
+    <value><string>%CLK_HH%:%CLK_mm%</string></value>
+  </parameter>
+  <parameter>
+    <parameterName>PaddingCharacter</parameterName>
+    <value><string>0</string></value>
+  </parameter>
+  <input>00000008</input>
+</transformContent>
+
+<!-- Spojení (datum + mezera + čas) -->
+<transformContent id="00000004">
+  <transformFunction>Concatenator</transformFunction>
+  <parameter>
+    <parameterName>separator</parameterName>
+    <value><string></string></value>
+  </parameter>
+  <input>00000006</input> <!-- DATUM -->
+  <input>00000007</input> <!-- mezera -->
+  <input>00000009</input> <!-- Cas -->
+</transformContent>
+
+<!-- Statický obsah – mezera mezi datem a časem -->
+<staticContent id="00000007">
+  <value>
+    <string><![CDATA[ ]]></string>
+  </value>
+</staticContent>
+
+
+Shrnutí:
+
+Zdroj času: nonQueriedContent id="00000003"
+
+Offsety a zaokrouhlení: transformContent id="00000005" (datum) a id="00000008" (čas)
+
+Formátování: transformContent id="00000006" (datum) a id="00000009" (čas)
+
+Spojení: transformContent id="00000004" (datum + mezera + čas)
+
+Mezera: staticContent id="00000007"
